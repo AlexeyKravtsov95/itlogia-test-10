@@ -255,37 +255,31 @@ body {
     background: #eba8b1;
 }
 
-.macaroons__items {
-    display: grid;
-    gap: 136px 29px;
-    grid-template-columns: repeat(auto-fill, minmax(263px, 263px));
-    justify-content: center;
-}
-
 .macaroon {
-    display: grid;
-    grid-template-rows: 1fr;
-    justify-items: center;
+    display: flex;
+    align-items: center;
     border: 2px solid #ffffff;
     border-radius: 20px;
     padding: 27px 20px;
     position: relative;
+    width: 263px;
+    flex-shrink: 0;
 }
 
 .macaroon__content {
     margin-top: 80px;
     position: relative;
     z-index: 2;
-    display: grid;
-    grid-template-rows: auto 1fr;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .macaroons__title {
     font-size: 45px;
     color: rgb(255, 255, 255);
     text-align: center;
-    margin-bottom: 143px;
+    margin-bottom: 83px;
 }
 
 .macaroon__image {
@@ -293,8 +287,16 @@ body {
     top: 0;
     left: 50%;
     z-index: 1;
+    width: 190px;
+    height: 190px;
     transform: translate(-50%, -50%);
     transition: transform 0.5s ease;
+}
+
+.macaroon__image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .macaroon:hover .macaroon__image {
@@ -308,37 +310,83 @@ body {
 }
 
 .macaroon__order-block {
-    display: grid;
-    grid-template-columns: 57px 1fr;
-    grid-template-rows: auto auto;
+    display: flex;
     align-items: center;
-    column-gap: 36px;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.macaroon__count {
-    grid-column: 1;
-    font-size: 15px;
-    font-family: GilroyRegular, sans-serif;
-    color: rgb(255, 255, 255);
+.macaroon__text-block {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
 }
 
+.macaroon__count,
 .macaroon__price {
-    grid-column: 1;
-    grid-row: 2;
     font-size: 15px;
     font-family: GilroyRegular, sans-serif;
     color: rgb(255, 255, 255);
+    line-height: 1.2;
 }
 
 .macaroon__order {
-    grid-column: 2;
-    grid-row: 1 / 3;
     width: 130px;
     height: 50px;
     border-radius: 25px;
     font-size: 16px;
     padding: 20px;
     line-height: 5px;
+}
+
+.slick-list {
+    padding: 60px 0;
+}
+
+.slick-slide {
+    display: flex;
+    justify-content: center;
+    margin: 0 15px;
+}
+
+.macaroons__items {
+    margin: 0 -15px;
+}
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.slick-prev {
+    left: -20px;
+    background-image: url('../images/prev.png');
+}
+
+.slick-next {
+    right: -20px;
+    background-image: url('../images/next.png');
+}
+
+.slick-prev:before,
+.slick-next:before {
+    content: none;
+}
+
+.slick-prev:hover,
+.slick-prev:focus {
+    background: url('../images/prev.png') no-repeat center/contain;
+}
+
+.slick-next:hover,
+.slick-next:focus {
+    background: url('../images/next.png') no-repeat center/contain;
 }
 
 .order {

@@ -16,7 +16,28 @@ $(document).ready(function () {
 
     $('#menu *').on('click', (event) => {
         $('#menu').removeClass('open');
-        event.stopPropagation(); // предотвращаем всплытие события
+        event.stopPropagation();
+    });
+
+    $('.macaroons__items').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 1167,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
     });
 
     $('#submit').click(function () {
