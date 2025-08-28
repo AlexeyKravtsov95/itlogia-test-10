@@ -758,7 +758,7 @@ body {
 }
 
 .success-message {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     height: 100%;

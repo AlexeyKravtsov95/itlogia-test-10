@@ -26,13 +26,13 @@ $(document).ready(function () {
         arrows: true,
         responsive: [
             {
-                breakpoint: 1167,
+                breakpoint: 1168,
                 settings: {
                     slidesToShow: 2
                 }
             },
             {
-                breakpoint: 768,
+                breakpoint: 769,
                 settings: {
                     slidesToShow: 1
                 }
@@ -69,11 +69,9 @@ $(document).ready(function () {
                     loader.hide();
                     console.log(response);
                     if (response.success === 1) {
+                        const infoHeight = $('.order__info').height();
                         $('.order__info').fadeOut(300, function () {
-                            $(this).html(
-                                '<div class="success-message">' + 'Спасибо за Ваш заказ. Мы скоро свяжемся с Вами!' +
-                                '</div>'
-                            ).fadeIn(300);
+                            $('.success-message').css('display', 'flex').fadeIn(300);
                         })
                     }
                     if (response.success === 0) {
